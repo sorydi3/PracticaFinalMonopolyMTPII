@@ -3,7 +3,10 @@
 
 //#include "stdafx.h"
 #include<iostream>
+#include<string>
+#include"Baralla.h"
 using namespace std;
+
 const unsigned A = 1103515245;
 const unsigned C= 12345;
 const unsigned M = 32767;
@@ -17,7 +20,8 @@ void rand(unsigned &seed, unsigned &res, unsigned &x_n) {
 }
 int main()
 {
-
+	Baralla baralla;
+	/*
 	cout << "*** TEST DAU ***" << endl;
 	cout << "Entra la llavor" << endl;
 	unsigned seed;
@@ -33,6 +37,18 @@ int main()
 		cout <<resultat << endl;
 		seed =res;
 	}
+	*/
+
+	cout << "*** TEST CARTES DE LA SORT ***" << endl;
+	cout << "Introdueix el nom del fitxer de cartes de sort" << endl;
+	string nom_fitxer;
+	cin >> nom_fitxer;
+	cout << "Entra el nombre de cartes" << endl;
+	unsigned nombre;
+	cin >> nombre;
+	baralla.AfegirCartes(nom_fitxer);
+	baralla.procesa(nombre);
+
     return 0;
 }
 

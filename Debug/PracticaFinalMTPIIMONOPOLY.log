@@ -1,4 +1,7 @@
 ﻿  PracticaFinalMTPIIMONOPOLY.cpp
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly.cpp(31): warning C4018: '<': signed/unsigned mismatch
-  PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe
-  PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.pdb (Partial PDB)
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly.cpp(55): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Carta.cpp
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\carta.cpp(30): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Baralla.cpp
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\baralla.cpp(137): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Generating Code...

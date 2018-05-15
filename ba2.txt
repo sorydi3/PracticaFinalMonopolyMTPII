@@ -1,0 +1,36 @@
+Error de la banca al seu favor. Rebi 200 euros.
+200
+0
+Pluges torrencials. Resta 2 torns sense tirar.
+0
+2
+Pagui 300 euros de l'impost de successions.
+-300
+0
+Impost pel servei de gas. Pagui 50 euros.
+-50
+0
+Errors de càlculs. El banc et retorna 50 euros.
+50
+0
+Multa de trànsit. Pagui 100 euros.
+-100
+0
+Ha guanyat un concurs de sopa de lletres. Cobri 25 euros.
+25
+0
+Fas una donació a l'associació Enginyeria Sense Fronteres. Pagues 150 euros.
+-150
+0
+Has estat arrestat per evadir impostos. Resta 3 torns sense tirar.
+0
+3
+Primer premi en un concurs de bellesa. Cobri 40 euros.
+40
+0
+Error de la banca al teu favor. Reps 100 euros.
+100
+0
+Fas una donació a l'associació UdGeeks. Pagues 50 euros.
+-50
+0
