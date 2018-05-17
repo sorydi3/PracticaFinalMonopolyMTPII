@@ -1,4 +1,4 @@
-//#include "stdafx.h"
+#include "stdafx.h"
 #include "Carta.h"
 Carta::Carta()
 {
@@ -12,7 +12,7 @@ void Carta::llegir(ifstream& in_file) {
 	getline(in_file, _inf);
 	in_file >> _quantitat;
 	in_file>> _penalitzacio;
-	in_file.ignore();
+	in_file.ignore(100,'\n');
 }
 
 void Carta::mostrar()const {

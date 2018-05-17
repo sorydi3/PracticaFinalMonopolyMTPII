@@ -1,0 +1,109 @@
+2
+6
+2000
+24
+0
+E
+Sortida
+200
+0
+1
+P
+Carrer Rec Arnau
+100
+25
+2
+E
+Impost sobre Reintegraments
+-200
+0
+3
+P
+Estació Busos
+120
+25
+4
+S
+5
+P
+Carrer Ample
+150
+25
+6
+E
+Presó
+0
+3
+7
+P
+Carrer Tapis
+200
+50
+8
+P
+Carrer de la Jonquera
+240
+50
+9
+S
+10
+P
+Carrer Sant Pau
+260
+50
+11
+P
+Carrer Peralada
+300
+50
+12
+E
+Pàrquing
+0
+0
+13
+P
+Pujada del Castell
+350
+75
+14
+S
+15
+P
+Carrer Besalú
+400
+75
+16
+S
+17
+P
+Plaça de l'Ajuntament
+450
+75
+18
+E
+Cap a la presó
+0
+2
+19
+P
+Carrer Nou
+500
+100
+20
+P
+Carrer Girona
+600
+100
+21
+S
+22
+P
+Av. Salvador Dalí
+800
+100
+23
+P
+Rambla
+1000
+100

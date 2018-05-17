@@ -1,0 +1,81 @@
+2
+6
+2000
+16
+0
+E
+Sortida
+1000
+0
+1
+P
+Emili Grahit
+100
+25
+2
+P
+Parc Central
+100
+25
+3
+P
+Lluis Pericot
+150
+25
+4
+E
+Presó
+0
+3
+5
+P
+Rambla
+200
+50
+6
+P
+Estació RENFE
+100
+50
+7
+P
+Carretera Barcelona
+250
+50
+8
+E
+Pàrquing
+0
+0
+9
+P
+Força
+300
+75
+10
+P
+Estació Busos
+100
+75
+11
+P
+Nou
+400
+75
+12
+E
+Cap a la presó
+0
+2
+13
+S
+14
+P
+Estació AVE
+100
+100
+15
+P
+Santa Clara
+500
+100

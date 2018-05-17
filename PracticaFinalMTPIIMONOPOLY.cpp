@@ -1,10 +1,11 @@
 // PracticaFinalMTPIIMONOPOLY.cpp : Defines the entry point for the console application.
 //
-
-//#include "stdafx.h"
+#include "stdafx.h"
 #include<iostream>
 #include<string>
 #include"Baralla.h"
+#include"Tauler.h"
+#include"Joc.h"
 using namespace std;
 
 const unsigned A = 1103515245;
@@ -37,8 +38,7 @@ int main()
 		cout <<resultat << endl;
 		seed =res;
 	}
-	*/
-
+	/*
 	cout << "*** TEST CARTES DE LA SORT ***" << endl;
 	cout << "Introdueix el nom del fitxer de cartes de sort" << endl;
 	string nom_fitxer;
@@ -48,7 +48,22 @@ int main()
 	cin >> nombre;
 	baralla.AfegirCartes(nom_fitxer);
 	baralla.procesa(nombre);
+	*/
 
+	/*
+	cout << "*** TEST TAULER ***" << endl;
+	cout << "Introdueix el nom del fitxer de configuració" << endl;
+	string nom_fitxer;
+	cin >> nom_fitxer;
+	Tauler tauler;
+	tauler.settupTauler(nom_fitxer);
+	tauler.showTable();
     return 0;
+	*/
+	Joc joc;
+	joc.inicialitzarTauler();
+	joc.inicialitzarBaralla();
+	joc.AfegirJugadors();
+	joc.DisplayContent();
 }
 

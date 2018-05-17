@@ -148,19 +148,33 @@
   <ItemGroup>
     <ClInclude Include="Baralla.h" />
     <ClInclude Include="Carta.h" />
+    <ClInclude Include="Casella.h" />
+    <ClInclude Include="Especial.h" />
+    <ClInclude Include="Joc.h" />
+    <ClInclude Include="Jugador.h" />
+    <ClInclude Include="Propietat.h" />
+    <ClInclude Include="Sort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tauler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Baralla.cpp" />
     <ClCompile Include="Carta.cpp" />
+    <ClCompile Include="Casella.cpp" />
+    <ClCompile Include="Especial.cpp" />
+    <ClCompile Include="Joc.cpp" />
+    <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="PracticaFinalMTPIIMONOPOLY.cpp" />
+    <ClCompile Include="Propietat.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Tauler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
