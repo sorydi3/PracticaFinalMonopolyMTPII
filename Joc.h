@@ -7,6 +7,9 @@
 #include"Baralla.h"
 #include"Tauler.h"
 using namespace std;
+static const unsigned A_RAND = 1103515245;
+static const unsigned C_RAND = 12345;
+static const unsigned M_RAND = 32767;
 class Joc
 {
 public:
@@ -15,16 +18,17 @@ public:
 	//copy constructor
 	Joc(const Joc &source);
 	Joc& operator=(const Joc &source);
-	void inicialitzarBaralla();
-	void inicialitzarTauler();
+	void inicialitzaJoc();
 	void DisplayContent();
-	void AfegirJugadors();
 	void procesa(unsigned _num);
+	void torn();
+	void inici();
 
 	~Joc();
 private:
 	Baralla _baralla;
 	Tauler _tauler;
+	unsigned _seed;
 	struct Node
 	{
 		Jugador jugador;
@@ -39,4 +43,11 @@ private:
 	void deleteFirst();
 	Jugador Primer()const;
 	void deleteLast();
+	void rand(unsigned &res, unsigned &x_n) const;
+	void inicialitzarBaralla();
+	void inicialitzarTauler();
+	void AfegirJugadors();
+	unsigned  tirarDaus(unsigned tirades);
+	void mostraGuanyador()const;
+
 };

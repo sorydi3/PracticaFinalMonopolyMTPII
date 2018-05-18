@@ -1,4 +1,4 @@
-// PracticaFinalMTPIIMONOPOLY.cpp : Defines the entry point for the console application.
+// PracticaFinalMTPIIMONOPOLY.cpp	: Defines the entry point for the console application.
 //
 #include "stdafx.h"
 #include<iostream>
@@ -8,9 +8,9 @@
 #include"Joc.h"
 using namespace std;
 
-const unsigned A = 1103515245;
+const unsigned A= 1103515245;
 const unsigned C= 12345;
-const unsigned M = 32767;
+const unsigned M= 32767;
 
 
 void rand(unsigned &seed, unsigned &res, unsigned &x_n) {
@@ -61,9 +61,7 @@ int main()
     return 0;
 	*/
 	Joc joc;
-	joc.inicialitzarTauler();
-	joc.inicialitzarBaralla();
-	joc.AfegirJugadors();
-	joc.DisplayContent();
+	joc.inicialitzaJoc();
+	joc.inici();
 }
 

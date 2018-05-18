@@ -10,3 +10,5 @@ Casella* Casella::clonar()const {
 Casella::~Casella(){}
 void Casella::mostrar() const {}
 void Casella::llegir(ifstream &i_file) {};
+void Casella::processarJugada(Jugador *jugador){}
+int Casella::capitalEntrada()const {return 0;}

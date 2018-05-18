@@ -2,6 +2,7 @@
 #include<iostream>
 #include<iomanip>
 #include"Joc.h"
+
 Joc::Joc()
 {
 	
@@ -33,6 +34,7 @@ void Joc::AfegirJugadors() {
 		cout << "Entra el nom del jugador " << i + 1 << endl;
 		Jugador jugador;
 		jugador.llegir(capital);
+		jugador.setId(i);
 		addLast(jugador);
 	}
 }
@@ -83,7 +85,7 @@ bool Joc::isEmpty()const {
 void Joc::DisplayContent() {
 	Node *temp = _first;
 	while (temp) {
-		temp->jugador.mostrar();
+		temp->jugador.mostrar('l');
 		temp = temp->next;
 	}
 	if (!_first) {
@@ -122,7 +124,7 @@ void Joc::procesa(unsigned num) {
 	for (int i = 0; i < num; i++) {
 		Node *aux = _first;
 		cout << "Jugador " << i + 1 << endl;
-		aux->jugador.mostrar();
+		aux->jugador.mostrar('l');
 		addLast(aux->jugador);
 		deleteFirst();
 	}
@@ -145,4 +147,91 @@ void Joc::deleteLast() {
 	ant->next = NULL;
 	_last = ant;
 	delete t;
+}
+////////////////////////////////////////////////////////////RANDS METHODS//////////////////////////////////////////////////////
+unsigned Joc::tirarDaus(unsigned tirades){
+	unsigned resultat = 0;
+	unsigned res = 0;//guarda resultat
+	unsigned sum = 0;
+	//cout << "Tirades del dau" << endl;
+	for (int i = 0; i < tirades; i++) {
+		rand(res, resultat);
+		//cout << resultat << endl;
+		sum += resultat;
+		_seed = res;
+	}
+	return sum;
+}
+void  Joc ::rand(unsigned &res, unsigned &x_n) const{
+	//pre:
+	//post:
+	res = (_seed*A_RAND + C_RAND) % M_RAND;
+	x_n = (res % 6) + 1;
+}
+////////////////////////////////////////////////////////////////////PUBLIC METHODS///////////////////////////////////////////////////////////
+void Joc::inicialitzaJoc() {
+	inicialitzarTauler();
+	inicialitzarBaralla();
+	cout << "Entra la llavor" << endl;
+	cin >> _seed;
+	AfegirJugadors();
+}
+
+//////////////////////////////////////////////////////////INIT GAME////////////////////////////////////////////////////
+void Joc::torn() {
+	Node * aux = _first;
+	int size=_tauler.getSize();
+	int capitalEntrada = _tauler.capitalEntrada();
+	unsigned _posicio = 0;
+	while (aux) {
+		if (!aux->jugador.esPenalitzat()) {
+			unsigned posicio = tirarDaus(2);
+			_posicio = posicio;
+			aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
+			aux->jugador.mostrar('n');
+			_tauler.processa(&aux->jugador, aux->jugador.obtenirPosicio());
+		}
+		else {
+			aux->jugador.mostrar('p');
+			aux->jugador.actulitzaPenalitzacioJugador();
+		}
+		aux = aux->next;
+	}
+
+	DisplayContent();
+}
+
+void Joc::inici() {
+	bool continuar = true;
+	char opcio;
+	while (continuar) {
+		torn();
+		cout << "Vols mostrar el tauler? (S/N)" << endl;
+		cin >> opcio;
+		if (opcio == 'S') _tauler.showTable();
+
+		cout << "Vols mostrar l'estat dels Jugadors? (S/N)" << endl;
+		cin >> opcio;
+		if (opcio == 'S') DisplayContent();
+		cout << "Vols Continuar? (S/N)" << endl;
+		cin >> opcio;
+		if (opcio == 'N') continuar = false;
+	}
+	cout << "Guanyador:" << endl;
+	mostraGuanyador();
+	cout << "***FI DEL MONOPOLY***" << endl;
+}
+
+
+void Joc:: mostraGuanyador()const {
+	Node* aux = _first;
+	Node *guanyador = aux;
+	aux = aux->next;
+	while (aux) {
+		if (aux->jugador.esMenor(&guanyador->jugador)) {
+			guanyador = aux;
+		}
+		aux = aux->next;
+	}
+	guanyador->jugador.mostrar('l');
 }

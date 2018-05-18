@@ -1,5 +1,6 @@
 ﻿  Joc.cpp
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(31): warning C4018: '<': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(122): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(32): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(124): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(157): warning C4018: '<': signed/unsigned mismatch
   PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe
   PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.pdb (Partial PDB)

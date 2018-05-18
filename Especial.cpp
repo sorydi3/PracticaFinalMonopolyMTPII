@@ -5,6 +5,7 @@ Especial::Especial():Casella(""){
 	_quantitat_p_c = 0;
 	_torn = 0;
 }
+
 Casella* Especial::clonar()const {
 	return new Especial(*this);
 }
@@ -26,6 +27,17 @@ void Especial::mostrar() const {
 	else
 		cout << "Especial: " << _nom << ": "<<_torn<< " torns sense tirar"<< endl;
  }
-void Especial::processarJugada() const {
-
+void Especial::processarJugada( Jugador * jugador) {
+	//jugador.mostrar('l');
+	//mostrar();
+	jugador->penalitzat(_torn);
+	cout << "En/La " << jugador->obtenirNomJugador() << " es queda " << _torn << " torns sence tirar" << endl;
 };
+
+int Especial::obtenirCapitalSortida()const {
+	return _quantitat_p_c;
+}
+
+int Especial::capitalEntrada()const {
+	return _quantitat_p_c;
+}

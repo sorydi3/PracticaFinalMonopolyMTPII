@@ -10,6 +10,9 @@ Tauler::Tauler()
 	_t = NULL;
 }
 
+int Tauler::getSize()const {
+	return _n;
+}
 Tauler::Tauler(const Tauler& o)
 {
 	copy(o);
@@ -21,6 +24,10 @@ Tauler::~Tauler()
 int Tauler::capitaInicial() const {
 	return _cptl;
 }
+ int Tauler:: capitalEntrada()const {
+	 return _t[0]->capitalEntrada();
+}
+
 int Tauler::jugadorsMax() const {
 	return _max;
 }
@@ -37,9 +44,6 @@ void Tauler::free() {
 
 void Tauler::reservar() {
 	_t = new Casella *[_n];
-	//for (int i = 0; i < _r; i++) {
-		//_mat[i] = new int[_c];
-	//}
 }
 
 Tauler & Tauler::operator=(const Tauler &o) {
@@ -111,4 +115,8 @@ void Tauler::showTable()const {
 		cout << i << ": ";
 		_t[i]->mostrar();
 	}
+}
+
+void Tauler::processa(Jugador *jugador, unsigned posicio)const {
+	_t[posicio]->processarJugada(jugador);
 }

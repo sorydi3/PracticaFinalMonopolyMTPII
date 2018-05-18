@@ -6,6 +6,7 @@
 #include "Especial.h"
 #include "Propietat.h"
 #include "Sort.h"
+#include"Jugador.h"
 
 using namespace std;
 
@@ -18,9 +19,12 @@ public:
 	Tauler &operator=(const Tauler &t);
 	void settupTauler(string nom_fitxer);
 	void showTable()const;
+	void processa(Jugador *jugador, unsigned posicio) const;
 	int capitaInicial()const;
+	int capitalEntrada()const;
 	int jugadorsMin()const;
 	int jugadorsMax()const;
+	int getSize()const;
 	~Tauler();
 private:
 	Casella **_t;
