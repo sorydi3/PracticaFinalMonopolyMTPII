@@ -106,13 +106,28 @@ Baralla& Baralla::operator=(const Baralla& Baralla) {
 Carta Baralla::Primer()const {
 	return _first->carta;
 }
-void Baralla::procesa(unsigned num) {
+void Baralla::procesa(unsigned num,Jugador * jugador) {
 	for (int i = 0; i < num; i++) {
 		Node *aux = _first;
-		cout << "Carta " << i + 1 << endl;
+        cout << "Carta " << i + 1 << endl;
 		aux->carta.mostrar();
+		processaJugador(aux->carta, jugador);
 		addLast(aux->carta);
 		deleteFirst();
+	}
+}
+
+void Baralla::processaJugador(Carta carta,Jugador *jugador) const
+{
+	char opcio = 's';
+	int cantidad = carta.obtenir_quantitat();
+	unsigned penalitzacio = carta.obtenir_penalitzacio();
+	if (cantidad != 0) {
+		if (cantidad > 0) jugador->Cobrar(cantidad, opcio);
+		else jugador->pagar(cantidad);
+	}
+	else {
+		jugador->penalitzat(penalitzacio);
 	}
 }
 

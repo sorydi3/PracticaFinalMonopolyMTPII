@@ -24,6 +24,7 @@ int main()
 	Baralla baralla;
 	/*
 	cout << "*** TEST DAU ***" << endl;
+
 	cout << "Entra la llavor" << endl;
 	unsigned seed;
 	cin >> seed;

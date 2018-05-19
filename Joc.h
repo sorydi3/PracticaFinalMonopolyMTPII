@@ -49,5 +49,8 @@ private:
 	void AfegirJugadors();
 	unsigned  tirarDaus(unsigned tirades);
 	void mostraGuanyador()const;
+	void eliminaJugador();
+	void deleteBetween(Node *ant,Node * t);
+
 
 };

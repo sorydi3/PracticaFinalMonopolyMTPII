@@ -4,7 +4,7 @@
 #include"Carta.h"
 #include<cmath>
 #include<string>
-using namespace std;
+#include"Jugador.h"
 class Baralla
 {
 public:
@@ -15,7 +15,8 @@ public:
 	Baralla& operator=(const Baralla &source);
 	void DisplayContent();
 	void AfegirCartes(string nom_fitxer);
-	void procesa(unsigned _num);
+	void procesa(unsigned _num,Jugador * jugador);
+	void processaJugador(Carta carta,Jugador * jugador)const;
 
 	~Baralla();
 private:

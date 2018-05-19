@@ -16,9 +16,10 @@ public:
 	void llegir(ifstream & in_file);
 	void mostrar() const;
 	Casella* clonar() const;
-	void processarJugada(Jugador * jugador);
+	void processarJugada(Jugador * jugador,Baralla * baralla);
 	int capitalEntrada()const;
-
+	char getType()const;
+	void actualitzaPropietari();
 private:
 	int _quantitat_p_c;
 	unsigned _torn;

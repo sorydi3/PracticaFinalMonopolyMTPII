@@ -189,7 +189,10 @@ void Joc::torn() {
 			_posicio = posicio;
 			aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
 			aux->jugador.mostrar('n');
-			_tauler.processa(&aux->jugador, aux->jugador.obtenirPosicio());
+			_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
+			_tauler.resetPropietats();
+			eliminaJugador();
+			DisplayContent();
 		}
 		else {
 			aux->jugador.mostrar('p');
@@ -234,4 +237,41 @@ void Joc:: mostraGuanyador()const {
 		aux = aux->next;
 	}
 	guanyador->jugador.mostrar('l');
+}
+
+void Joc::eliminaJugador()
+{
+	Node *ant = NULL;
+	bool trobat = false;
+	Node *t = _first;
+	while (t && !trobat) {
+		//cout << "dintre del while" << endl;
+		if (!t->jugador.eliminar()) {
+			ant = t;
+			t = t->next;
+			//cout << "incrementent el bucle" << endl;
+		}
+		else {
+			trobat = true;
+		}
+	}
+	
+	 if (trobat && !ant && t) {//add at The end of the list
+		cout << "eliminat primer jugador" << endl;
+		deleteFirst();
+	}
+	else if (trobat && t && ant) {
+		cout << "eliminat segon jugador" << endl;
+		deleteBetween(ant,t);
+	}
+	else  {
+		cout << "eliminat tercer jugador" << endl;
+		if(trobat)
+		deleteFirst();
+	}
+}
+
+void Joc::deleteBetween(Node *ant, Node *cur) {
+	ant->next = cur->next;
+	delete cur;
 }

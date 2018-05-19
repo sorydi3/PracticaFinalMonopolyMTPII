@@ -13,7 +13,8 @@ public:
 	//pre:cert
 	//post:mostra la carta
 	void mostrar()const;
-
+	int obtenir_quantitat() const;
+	int obtenir_penalitzacio()const;
 private:
 	string _inf;
 	unsigned  _penalitzacio;

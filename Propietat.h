@@ -14,13 +14,15 @@ public:
 	Propietat();
 	void llegir(ifstream & in_file);
 	void mostrar() const;
-	void processarJugada(Jugador * Jugador);
+	void processarJugada(Jugador * Jugador,Baralla * baralla);
 	Casella* clonar() const;
 	int capitalEntrada()const;
-
+	char getType()const;
+	void actualitzaPropietari();
 	~Propietat();
 private:
 	unsigned _preu;
 	unsigned _preu_casa;
 	Jugador * _propietari;
+	unsigned _nombre_cases;
 };

@@ -2,9 +2,9 @@
 #include "Carta.h"
 Carta::Carta()
 {
-	string _inf = "";
-	unsigned  _penalitzacio = 0;
-	int _quantitat = 0;
+	  _inf = "";
+	  _penalitzacio = 0;
+	  _quantitat = 0;
 }
 
 
@@ -26,4 +26,15 @@ void Carta::mostrar()const {
 	else {
 		cout <<"El jugador es queda "<< _penalitzacio <<" torns sense tirar"<< endl;
 	}
+}
+
+int Carta::obtenir_quantitat() const
+{
+	
+	return _quantitat;
+}
+
+int Carta::obtenir_penalitzacio() const
+{
+	return _penalitzacio;
 }

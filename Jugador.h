@@ -18,8 +18,9 @@ public:
 	void atualitzaPosicio(unsigned &posicio,int size,unsigned diners_sortida);
 	void pagar(unsigned quantitat);
 	bool esMenor(Jugador *j1)const;
-	void Cobrar(Jugador * jugador, unsigned quantitat);
+	void Cobrar(unsigned quantitat,char opcio,Jugador * jugador = NULL);
 	int obtenirPosicio()const;
+	bool eliminar()const;
 	~Jugador();
 private:
 	unsigned _id;

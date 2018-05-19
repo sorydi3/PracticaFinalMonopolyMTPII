@@ -27,7 +27,7 @@ void Especial::mostrar() const {
 	else
 		cout << "Especial: " << _nom << ": "<<_torn<< " torns sense tirar"<< endl;
  }
-void Especial::processarJugada( Jugador * jugador) {
+void Especial::processarJugada( Jugador * jugador,Baralla * baralla) {
 	//jugador.mostrar('l');
 	//mostrar();
 	jugador->penalitzat(_torn);
@@ -41,3 +41,10 @@ int Especial::obtenirCapitalSortida()const {
 int Especial::capitalEntrada()const {
 	return _quantitat_p_c;
 }
+
+char Especial::getType() const
+{
+	return 'E';
+}
+
+void Especial::actualitzaPropietari(){}

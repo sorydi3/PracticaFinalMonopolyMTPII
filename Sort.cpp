@@ -11,8 +11,13 @@ void Sort::llegir(ifstream & in_file) {}
 void Sort::mostrar() const {
    cout << "Casella de Sort " <<_nom<< endl;
 }
-void Sort::processarJugada(Jugador * jugador){
-	jugador->mostrar('l');
-	mostrar();
+void Sort::processarJugada(Jugador * jugador,Baralla * baralla){
+	baralla->procesa(1,jugador);
 }
-int Sort::capitalEntrada()const { return 0; };
+int Sort::capitalEntrada()const { return 0; }
+char Sort::getType() const
+{
+	return 'S';
+}
+void Sort::actualitzaPropietari(){}
+

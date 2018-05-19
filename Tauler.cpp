@@ -13,6 +13,14 @@ Tauler::Tauler()
 int Tauler::getSize()const {
 	return _n;
 }
+void Tauler::resetPropietats()
+{
+	for (int i = 0; i < _n; i++) {
+		if (_t[i]->getType() == 'P') { 
+			cout << "propietari es igual a propietat" << _t[i]->getType() << endl;
+			_t[i]->actualitzaPropietari(); }
+	}
+}
 Tauler::Tauler(const Tauler& o)
 {
 	copy(o);
@@ -117,6 +125,6 @@ void Tauler::showTable()const {
 	}
 }
 
-void Tauler::processa(Jugador *jugador, unsigned posicio)const {
-	_t[posicio]->processarJugada(jugador);
+void Tauler::processa(Jugador *jugador,Baralla * baralla, unsigned posicio)const {
+	_t[posicio]->processarJugada(jugador,baralla);
 }

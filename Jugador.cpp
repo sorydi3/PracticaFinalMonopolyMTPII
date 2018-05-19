@@ -71,15 +71,32 @@ unsigned Jugador::obtenirId()const {
 	return _id;
 }
 
-void Jugador::Cobrar(Jugador *jugador, unsigned quantitat) {
-	jugador->_diner -= quantitat;
-	_diner += quantitat;
+void Jugador::Cobrar(unsigned quantitat,char opcio, Jugador *jugador) {
+	if (opcio != 's') {
+		int diners = jugador->_diner;
+		if (jugador->_diner < quantitat) {
+			jugador->_diner = -1;
+			_diner += diners;
+		}
+		else{ 
+			jugador->_diner -= quantitat;
+		    _diner += quantitat;
+		}
+	}
+	else {
+		_diner += quantitat;
+	}
 }
 int Jugador::obtenirPosicio()const {
 	return _posicio;
 }
+bool Jugador::eliminar() const
+{
+	return _diner < 0;
+}
 void Jugador::pagar(unsigned quantitat) {
 	_diner -= quantitat;
+
 }
 
 bool Jugador::esMenor(Jugador *j1)const{
