@@ -45,10 +45,10 @@ void Jugador::actulitzaPenalitzacioJugador() {
 	_penalitzacio -= 1;
 }
 
-void Jugador:: atualitzaPosicio(unsigned &posicio,int size,unsigned diners_sortida) {
+void Jugador:: atualitzaPosicio(int &posicio,int size,unsigned diners_sortida) {
 	if(_posicio==0)
 	_posicio = posicio;
-	else if((_posicio+posicio)>size) {
+	else if((_posicio+posicio)>(size-1)) {
 		_diner += diners_sortida;
 		_posicio = (_posicio + posicio) - size;
 	}

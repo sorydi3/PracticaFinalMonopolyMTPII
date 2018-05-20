@@ -5,7 +5,7 @@
 
 Joc::Joc()
 {
-	
+	_countador = 0;
 	_first = NULL;
 	_last = NULL;
 }
@@ -27,7 +27,8 @@ void Joc::copy(const Joc& source) {
 void Joc::AfegirJugadors() {
 	cout << "Introdueix el nombre de jugadors" << endl;
 	unsigned n;
-	cin >> n;
+	do{cin >> n;} while (n>_tauler.jugadorsMax() || n< _tauler.jugadorsMin());
+	_countador = n;
 	int capital = _tauler.capitaInicial();
 	for (int i = 0; i < n; i++)
 	{
@@ -182,17 +183,16 @@ void Joc::torn() {
 	Node * aux = _first;
 	int size=_tauler.getSize();
 	int capitalEntrada = _tauler.capitalEntrada();
-	unsigned _posicio = 0;
+	int _posicio = 0;
 	while (aux) {
 		if (!aux->jugador.esPenalitzat()) {
-			unsigned posicio = tirarDaus(2);
+			int posicio = tirarDaus(2);
 			_posicio = posicio;
 			aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
 			aux->jugador.mostrar('n');
 			_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
 			_tauler.resetPropietats();
-			eliminaJugador();
-			DisplayContent();
+			//DisplayContent();
 		}
 		else {
 			aux->jugador.mostrar('p');
@@ -200,14 +200,14 @@ void Joc::torn() {
 		}
 		aux = aux->next;
 	}
-
-	DisplayContent();
+			eliminaJugador();
+	//DisplayContent();
 }
 
 void Joc::inici() {
 	bool continuar = true;
 	char opcio;
-	while (continuar) {
+	while (continuar && _countador>1) {
 		torn();
 		cout << "Vols mostrar el tauler? (S/N)" << endl;
 		cin >> opcio;
@@ -259,15 +259,19 @@ void Joc::eliminaJugador()
 	 if (trobat && !ant && t) {//add at The end of the list
 		cout << "eliminat primer jugador" << endl;
 		deleteFirst();
+		_countador--;
 	}
 	else if (trobat && t && ant) {
 		cout << "eliminat segon jugador" << endl;
 		deleteBetween(ant,t);
+		_countador--;
 	}
 	else  {
-		cout << "eliminat tercer jugador" << endl;
-		if(trobat)
-		deleteFirst();
+		if (trobat) {
+		    cout << "eliminat tercer jugador" << endl;
+			deleteFirst();
+			_countador--;
+		}
 	}
 }
 

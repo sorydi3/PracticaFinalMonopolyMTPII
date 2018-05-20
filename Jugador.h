@@ -15,7 +15,7 @@ public:
 	void penalitzat(unsigned penalitzacio);
 	string obtenirNomJugador()const;
 	void actulitzaPenalitzacioJugador();
-	void atualitzaPosicio(unsigned &posicio,int size,unsigned diners_sortida);
+	void atualitzaPosicio(int &posicio,int size,unsigned diners_sortida);
 	void pagar(unsigned quantitat);
 	bool esMenor(Jugador *j1)const;
 	void Cobrar(unsigned quantitat,char opcio,Jugador * jugador = NULL);

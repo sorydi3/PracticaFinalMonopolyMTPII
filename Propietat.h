@@ -3,6 +3,7 @@
 #include<string>
 #include "Casella.h"
 #include"Jugador.h"
+#include<cmath>
 #include<fstream>
 
 using namespace std;
@@ -19,6 +20,7 @@ public:
 	int capitalEntrada()const;
 	char getType()const;
 	void actualitzaPropietari();
+	double preuLloguer()const;
 	~Propietat();
 private:
 	unsigned _preu;

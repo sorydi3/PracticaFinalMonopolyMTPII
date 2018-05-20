@@ -28,6 +28,7 @@ public:
 private:
 	Baralla _baralla;
 	Tauler _tauler;
+	unsigned _countador;
 	unsigned _seed;
 	struct Node
 	{

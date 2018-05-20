@@ -24,13 +24,13 @@ void Propietat::llegir(ifstream& in_file) {
 	in_file >> _preu_casa;
 }
 void Propietat::mostrar() const {
+	if(!_propietari)
 	cout << "Propietat: " << _nom << " : " << _preu <<" \u20AC"<< endl;
+	else cout << "Propietat: " << _nom << " : " << _preu << " \u20AC" <<", Propietari: "<<_propietari->obtenirId()<<endl;
+
 }
 void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 	char opcio = 'p';
-	cout << "printng baralla----------------------" << endl;
-	baralla->DisplayContent();
-	cout << "printng baralla----------------------" << endl;
 	if (!_propietari) {
 		cout << jugador->obtenirNomJugador() << " vols comprar la propietat " << _nom << " per " << _preu << " \u20AC" << "?" << "  (S/N)" << endl;
 		char opcio;
@@ -42,6 +42,7 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 		}
 	}
 	else if (&_propietari==&jugador) {
+		cout << "Construin Cases" << endl;
 		if (_nombre_cases < 5) {
 			cout << "cases+1" << endl;
 			_nombre_cases++;
@@ -51,7 +52,7 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 	}
 	else {
 		cout << "heu de cobrar " << endl;
-		_propietari->Cobrar(_preu_casa,opcio,jugador);
+		_propietari->Cobrar(preuLloguer(),opcio,jugador);
 	}
 }
 
@@ -68,6 +69,12 @@ void Propietat::actualitzaPropietari()
 	if (_propietari) {
 	if (_propietari->eliminar()) _propietari = NULL;
 	}
+}
+
+double Propietat::preuLloguer() const
+{
+	double preu = ceil((0.1*_preu) + (_nombre_cases*_preu_casa)*0.3);
+	return preu;
 }
 
 

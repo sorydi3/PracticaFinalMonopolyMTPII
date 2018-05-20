@@ -20,7 +20,7 @@ public:
 	Tauler &operator=(const Tauler &t);
 	void settupTauler(string nom_fitxer);
 	void showTable()const;
-	void processa(Jugador *jugador,Baralla *baralla, unsigned posicio) const;
+	void processa(Jugador *jugador,Baralla *baralla, int posicio) const;
 	int capitaInicial()const;
 	int capitalEntrada()const;
 	int jugadorsMin()const;

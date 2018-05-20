@@ -17,7 +17,7 @@ void Tauler::resetPropietats()
 {
 	for (int i = 0; i < _n; i++) {
 		if (_t[i]->getType() == 'P') { 
-			cout << "propietari es igual a propietat" << _t[i]->getType() << endl;
+			//cout << "propietari es igual a propietat" << _t[i]->getType() << endl;
 			_t[i]->actualitzaPropietari(); }
 	}
 }
@@ -118,13 +118,14 @@ void Tauler::configVars(ifstream & in_file) {
 }
 void Tauler::showTable()const {
 	cout << "Tauler:" << endl;
-	for (size_t i = 0; i < _n; i++)
+	for (int i = 0; i < _n; i++)
 	{
 		cout << i << ": ";
 		_t[i]->mostrar();
 	}
 }
 
-void Tauler::processa(Jugador *jugador,Baralla * baralla, unsigned posicio)const {
+void Tauler::processa(Jugador *jugador,Baralla * baralla, int posicio)const {
+
 	_t[posicio]->processarJugada(jugador,baralla);
 }

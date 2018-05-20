@@ -1,6 +1,12 @@
 ﻿  Joc.cpp
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(32): warning C4018: '<': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(124): warning C4018: '<': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(157): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(30): warning C4018: '>': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(30): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(125): warning C4018: '<': signed/unsigned mismatch
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(158): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  PracticaFinalMTPIIMONOPOLY.cpp
+  Generating Code...
   PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe
   PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.pdb (Partial PDB)

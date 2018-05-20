@@ -109,7 +109,7 @@ Carta Baralla::Primer()const {
 void Baralla::procesa(unsigned num,Jugador * jugador) {
 	for (int i = 0; i < num; i++) {
 		Node *aux = _first;
-        cout << "Carta " << i + 1 << endl;
+        cout << "En/La  " << jugador->obtenirNomJugador() <<" ha tret la carta "<< endl;
 		aux->carta.mostrar();
 		processaJugador(aux->carta, jugador);
 		addLast(aux->carta);
