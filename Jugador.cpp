@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Jugador.h"
+#include<cmath>
 
 
 Jugador::Jugador()
@@ -16,17 +17,23 @@ void Jugador::llegir(int capital_inicial) {
 	_diner = capital_inicial;
 }
 void Jugador::mostrar(char opcio) const {
+	if (_diner >= 0) {
+
 	if (opcio == 'l') {
 		if (_penalitzacio > 0)
-			cout << _nom << ": " << _diner << ": Casella:" << _posicio << ": Penalitzat amb " << _penalitzacio << " torns" << endl;
+			cout << "Jugador " << _id + 1 << ": " << _nom << ": " << _diner << ": Casella:" << _posicio << ": Penalitzat amb " << _penalitzacio << " torns" << endl;
 		else
-			cout <<"Jugador "<<_id+1<<": "<< _nom << ": " << _diner << ": Casella:" << _posicio << endl;
+			cout <<"Jugador "<< _id + 1 <<": "<< _nom << ": " << _diner << ": Casella:" << _posicio << endl;
 	}
 	else if (opcio=='p') {
 		cout << "En/La " << _nom << " estx penalitza" << endl;
 	}
 	else {
 		cout << "En/La " << _nom << " Ha tret un " <<_posicio<< endl;
+	}
+	}
+	else {
+		cout << "Jugador " << _id + 1 << ": " << _nom << ": - ELIMINAT - " << endl;
 	}
 }
 Jugador::~Jugador()
@@ -45,7 +52,7 @@ void Jugador::actulitzaPenalitzacioJugador() {
 	_penalitzacio -= 1;
 }
 
-void Jugador:: atualitzaPosicio(int &posicio,int size,unsigned diners_sortida) {
+void Jugador:: atualitzaPosicio(int &posicio,int size,int diners_sortida) {
 	if(_posicio==0)
 	_posicio = posicio;
 	else if((_posicio+posicio)>(size-1)) {
@@ -71,7 +78,7 @@ unsigned Jugador::obtenirId()const {
 	return _id+1;
 }
 
-void Jugador::Cobrar(unsigned quantitat,char opcio, Jugador *jugador) {
+void Jugador::Cobrar(int quantitat,char opcio, Jugador *jugador) {
 	if (opcio != 's') {
 		int diners = jugador->_diner;
 		if (jugador->_diner < quantitat) {
@@ -79,7 +86,7 @@ void Jugador::Cobrar(unsigned quantitat,char opcio, Jugador *jugador) {
 			_diner += diners;
 		}
 		else{ 
-			jugador->_diner -= quantitat;
+			jugador->_diner -= abs(quantitat);
 		    _diner += quantitat;
 		}
 	}
@@ -94,8 +101,9 @@ bool Jugador::eliminar() const
 {
 	return _diner < 0;
 }
-void Jugador::pagar(unsigned quantitat) {
-	_diner -= quantitat;
+void Jugador::pagar(int quantitat) {
+	
+	_diner -= abs(quantitat);
 
 }
 

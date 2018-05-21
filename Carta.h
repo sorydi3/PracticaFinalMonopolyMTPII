@@ -12,7 +12,7 @@ public:
 	void llegir(ifstream & in_file);
 	//pre:cert
 	//post:mostra la carta
-	void mostrar()const;
+	void mostrar(char opcio)const;
 	int obtenir_quantitat() const;
 	int obtenir_penalitzacio()const;
 private:

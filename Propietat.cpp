@@ -41,7 +41,7 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 			_nombre_cases = 0;
 		}
 	}
-	else if (&_propietari==&jugador) {
+	else if (_propietari->obtenirId()==jugador->obtenirId()) {
 		cout << "Construin Cases" << endl;
 		if (_nombre_cases < 5) {
 			cout << "cases+1" << endl;

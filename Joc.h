@@ -52,6 +52,6 @@ private:
 	void mostraGuanyador()const;
 	void eliminaJugador();
 	void deleteBetween(Node *ant,Node * t);
-
+	bool mesDeUnJugador()const;
 
 };

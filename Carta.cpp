@@ -15,15 +15,21 @@ void Carta::llegir(ifstream& in_file) {
 	in_file.ignore(100,'\n');
 }
 
-void Carta::mostrar()const {
-	if (_quantitat != 0) {
-		if(_quantitat>0)
-		cout <<"El jugador ha de cobrar "<< _quantitat << " \u20AC" << endl;
-		else cout << "El jugador ha de pagar " << abs(_quantitat) <<" \u20AC"<< endl;
+void Carta::mostrar(char opcio)const {
+	if (opcio == 'c') {
 
+		if (_quantitat != 0) {
+			if(_quantitat>0)
+			cout <<"El jugador ha de cobrar "<< _quantitat << " \u20AC" << endl;
+			else cout << "El jugador ha de pagar " << abs(_quantitat) <<" \u20AC"<< endl;
+
+		}
+		else {
+			cout <<"El jugador es queda "<< _penalitzacio <<" torns sense tirar"<< endl;
+		}
 	}
 	else {
-		cout <<"El jugador es queda "<< _penalitzacio <<" torns sense tirar"<< endl;
+		cout << _inf << endl;
 	}
 }
 

@@ -15,10 +15,10 @@ public:
 	void penalitzat(unsigned penalitzacio);
 	string obtenirNomJugador()const;
 	void actulitzaPenalitzacioJugador();
-	void atualitzaPosicio(int &posicio,int size,unsigned diners_sortida);
-	void pagar(unsigned quantitat);
+	void atualitzaPosicio(int &posicio,int size,int diners_sortida);
+	void pagar(int quantitat);
 	bool esMenor(Jugador *j1)const;
-	void Cobrar(unsigned quantitat,char opcio,Jugador * jugador = NULL);
+	void Cobrar(int quantitat,char opcio,Jugador * jugador = NULL);
 	int obtenirPosicio()const;
 	bool eliminar()const;
 	~Jugador();

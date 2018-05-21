@@ -29,8 +29,10 @@ void Joc::AfegirJugadors() {
 	unsigned n;
 	cin >> n;
 	while (n > _tauler.jugadorsMax() || n < _tauler.jugadorsMin()) {
-		cout << "Nombre de jugadors incorrecte. Valor entre " << _tauler.jugadorsMin() << " i " << _tauler.jugadorsMax() << endl;
+	cout << "Nombre de jugadors incorrecte. Valor entre " << _tauler.jugadorsMin() << " i " << _tauler.jugadorsMax() << endl;
+	cin >> n;
 	}
+
 	_countador = n;
 	int capital = _tauler.capitaInicial();
 	for (int i = 0; i < n; i++)
@@ -183,29 +185,35 @@ void Joc::torn() {
 	int capitalEntrada = _tauler.capitalEntrada();
 	int _posicio = 0;
 	while (aux) {
-		if (!aux->jugador.esPenalitzat()) {
-			int posicio = tirarDaus(2);
-			_posicio = posicio;
-			aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
-			cout << "En/La " << aux->jugador.obtenirNomJugador() << " Ha tret un " << posicio << endl;
-			_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
-			_tauler.resetPropietats();
-			//DisplayContent();
-		}
-		else {
-			aux->jugador.mostrar('p');
-			aux->jugador.actulitzaPenalitzacioJugador();
-		}
+		if (!aux->jugador.eliminar()) {
+				if (!aux->jugador.esPenalitzat()) {
+					int posicio = tirarDaus(2);
+					_posicio = posicio;
+					aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
+					cout << "En/La " << aux->jugador.obtenirNomJugador() << " Ha tret un " << posicio << endl;
+					_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
+					_tauler.resetPropietats();
+					//DisplayContent();
+				}
+				else {
+					aux->jugador.mostrar('p');
+					aux->jugador.actulitzaPenalitzacioJugador();
+				}
+	}
 		aux = aux->next;
 	}
-			eliminaJugador();
+			//eliminaJugador();
 	//DisplayContent();
 }
 
 void Joc::inici() {
 	bool continuar = true;
 	char opcio;
-	while (continuar && _countador>1) {
+	cout << "Vols mostrar el tauler? (S/N)" << endl;
+	cin >> opcio;
+	if (opcio == 'S') _tauler.showTable();
+
+	while (continuar && mesDeUnJugador()) {
 		torn();
 		cout << "Vols mostrar el tauler? (S/N)" << endl;
 		cin >> opcio;
@@ -234,7 +242,7 @@ void Joc:: mostraGuanyador()const {
 		}
 		aux = aux->next;
 	}
-	cout << "Jugador " << guanyador->jugador.obtenirId() << ":";
+	//cout << "Jugador " << guanyador->jugador.obtenirId() << ":";
 	guanyador->jugador.mostrar('l');
 }
 
@@ -277,4 +285,17 @@ void Joc::eliminaJugador()
 void Joc::deleteBetween(Node *ant, Node *cur) {
 	ant->next = cur->next;
 	delete cur;
+}
+
+bool Joc::mesDeUnJugador()const {
+	Node *aux = _first;
+	bool trobat = false;
+	unsigned countador = 0;
+	while (aux && !trobat) {
+		if (!aux->jugador.eliminar()) {
+			countador++;
+		}
+		if (countador > 1)trobat = true;
+	}
+	return trobat;
 }

@@ -71,7 +71,7 @@ bool Baralla::isEmpty()const {
 void Baralla::DisplayContent() {
 	Node *temp = _first;
 	while (temp) {
-		temp->carta.mostrar();
+		temp->carta.mostrar('c');
 		temp = temp->next;
 	}
 	if (!_first) {
@@ -109,19 +109,20 @@ Carta Baralla::Primer()const {
 void Baralla::procesa(unsigned num,Jugador * jugador) {
 	for (int i = 0; i < num; i++) {
 		Node *aux = _first;
-        cout << "En/La  " << jugador->obtenirNomJugador() <<" ha tret la carta "<< endl;
-		aux->carta.mostrar();
-		processaJugador(aux->carta, jugador);
+        cout << "En/La  " << jugador->obtenirNomJugador() <<" ha tret la carta: " <<endl;
+		_first->carta.mostrar('s');
+		processaJugador(jugador);
 		addLast(aux->carta);
 		deleteFirst();
 	}
 }
 
-void Baralla::processaJugador(Carta carta,Jugador *jugador) const
+void Baralla::processaJugador(Jugador *jugador) const
 {
 	char opcio = 's';
-	int cantidad = carta.obtenir_quantitat();
-	unsigned penalitzacio = carta.obtenir_penalitzacio();
+	int cantidad = _first->carta.obtenir_quantitat();
+	//cout << "quantitat--->"<<cantidad << endl;
+	unsigned penalitzacio = _first->carta.obtenir_penalitzacio();
 	if (cantidad != 0) {
 		if (cantidad > 0) jugador->Cobrar(cantidad, opcio);
 		else jugador->pagar(cantidad);
