@@ -27,7 +27,10 @@ void Joc::copy(const Joc& source) {
 void Joc::AfegirJugadors() {
 	cout << "Introdueix el nombre de jugadors" << endl;
 	unsigned n;
-	do{cin >> n;} while (n>_tauler.jugadorsMax() || n< _tauler.jugadorsMin());
+	cin >> n;
+	while (n > _tauler.jugadorsMax() || n < _tauler.jugadorsMin()) {
+		cout << "Nombre de jugadors incorrecte. Valor entre " << _tauler.jugadorsMin() << " i " << _tauler.jugadorsMax() << endl;
+	}
 	_countador = n;
 	int capital = _tauler.capitaInicial();
 	for (int i = 0; i < n; i++)
@@ -88,11 +91,6 @@ void Joc::DisplayContent() {
 	while (temp) {
 		temp->jugador.mostrar('l');
 		temp = temp->next;
-	}
-	if (!_first) {
-		cout << "Cua buida." << endl;
-		cout << "TOTAL = " << "0.00" << " \u20AC" << endl;
-
 	}
 }
 void Joc::FreeHeap() {
@@ -189,7 +187,7 @@ void Joc::torn() {
 			int posicio = tirarDaus(2);
 			_posicio = posicio;
 			aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
-			aux->jugador.mostrar('n');
+			cout << "En/La " << aux->jugador.obtenirNomJugador() << " Ha tret un " << posicio << endl;
 			_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
 			_tauler.resetPropietats();
 			//DisplayContent();
@@ -236,6 +234,7 @@ void Joc:: mostraGuanyador()const {
 		}
 		aux = aux->next;
 	}
+	cout << "Jugador " << guanyador->jugador.obtenirId() << ":";
 	guanyador->jugador.mostrar('l');
 }
 
@@ -269,7 +268,7 @@ void Joc::eliminaJugador()
 	else  {
 		if (trobat) {
 		    cout << "eliminat tercer jugador" << endl;
-			deleteFirst();
+			deleteLast();
 			_countador--;
 		}
 	}

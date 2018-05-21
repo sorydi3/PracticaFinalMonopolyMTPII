@@ -51,8 +51,10 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 			cout << "Teniu un hotel :)" << endl;
 	}
 	else {
-		cout << "heu de cobrar " << endl;
-		_propietari->Cobrar(preuLloguer(),opcio,jugador);
+		cout << "En/La " << jugador->obtenirNomJugador() 
+			<< " ha de pagar " << preuLloguer() << " euros a en/la " 
+			<< _propietari->obtenirNomJugador() << endl;
+		   _propietari->Cobrar(preuLloguer(),opcio,jugador);
 	}
 }
 

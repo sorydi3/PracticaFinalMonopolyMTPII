@@ -22,17 +22,27 @@ void Especial::mostrar() const {
 		else
 		    cout << "Especial: " << _nom << ": pagar " <<abs(_quantitat_p_c) << " \u20AC" << endl;
 	}
-	else if (_quantitat_p_c == 0 && _torn == 0)
-		cout << "Especial: " << _nom << endl;
-	else
+	else if (_torn != 0)
 		cout << "Especial: " << _nom << ": "<<_torn<< " torns sense tirar"<< endl;
+	else
+		cout << "Especial: " << _nom << endl;
  }
-void Especial::processarJugada( Jugador * jugador,Baralla * baralla) {
-	//jugador.mostrar('l');
-	//mostrar();
-	jugador->penalitzat(_torn);
-	cout << "En/La " << jugador->obtenirNomJugador() << " es queda " << _torn << " torns sence tirar" << endl;
-};
+void Especial::processarJugada(Jugador * jugador, Baralla * baralla) {
+	if (_quantitat_p_c != 0) {
+		if (_quantitat_p_c > 0) {
+			cout << "En/La " << jugador->obtenirNomJugador() << " ha de cobrar " << _quantitat_p_c << " \u20AC" << endl;
+		    jugador->Cobrar(_quantitat_p_c, 's');
+		}
+		else {
+			cout << "En/La " << jugador->obtenirNomJugador() << " ha de pagar " <<abs(_quantitat_p_c) << " \u20AC" << endl;
+			jugador->pagar(_quantitat_p_c);
+		}
+	}
+	else {
+		   cout << "En/La " << jugador->obtenirNomJugador() << " es queda " << _torn << " torns sence tirar" << endl;
+		   jugador->penalitzat(_torn);
+	}
+}
 
 int Especial::obtenirCapitalSortida()const {
 	return _quantitat_p_c;

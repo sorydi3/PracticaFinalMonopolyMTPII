@@ -16,7 +16,6 @@ void Carta::llegir(ifstream& in_file) {
 }
 
 void Carta::mostrar()const {
-	cout << _inf << endl;
 	if (_quantitat != 0) {
 		if(_quantitat>0)
 		cout <<"El jugador ha de cobrar "<< _quantitat << " \u20AC" << endl;

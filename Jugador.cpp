@@ -20,7 +20,7 @@ void Jugador::mostrar(char opcio) const {
 		if (_penalitzacio > 0)
 			cout << _nom << ": " << _diner << ": Casella:" << _posicio << ": Penalitzat amb " << _penalitzacio << " torns" << endl;
 		else
-			cout << _nom << ": " << _diner << ": Casella:" << _posicio << endl;
+			cout <<"Jugador "<<_id+1<<": "<< _nom << ": " << _diner << ": Casella:" << _posicio << endl;
 	}
 	else if (opcio=='p') {
 		cout << "En/La " << _nom << " estx penalitza" << endl;
@@ -68,7 +68,7 @@ void Jugador::setId(unsigned id) {
 }
 
 unsigned Jugador::obtenirId()const {
-	return _id;
+	return _id+1;
 }
 
 void Jugador::Cobrar(unsigned quantitat,char opcio, Jugador *jugador) {
