@@ -86,12 +86,15 @@ void Jugador::Cobrar(int quantitat,char opcio, Jugador *jugador) {
 			_diner += diners;
 		}
 		else{ 
-			jugador->_diner -= abs(quantitat);
+			jugador->_diner -= quantitat;
 		    _diner += quantitat;
 		}
 	}
 	else {
-		_diner += quantitat;
+
+		if(_posicio!=0)
+		_diner = _diner+quantitat;
+
 	}
 }
 int Jugador::obtenirPosicio()const {

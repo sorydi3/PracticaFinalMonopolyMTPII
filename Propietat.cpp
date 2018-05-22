@@ -42,9 +42,11 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 		}
 	}
 	else if (_propietari->obtenirId()==jugador->obtenirId()) {
-		cout << "Construin Cases" << endl;
-		if (_nombre_cases < 5) {
-			cout << "cases+1" << endl;
+		if (_nombre_cases <=5) {
+		    cout <<"vols afegir una casa a la propietat " << _nom << " per " << _preu_casa << " \u20AC" << "?" << "  (S/N)" << endl;
+			char opci;
+			cin >> opcio;
+			if(opcio=='S')
 			_nombre_cases++;
 		}
 		else
@@ -75,7 +77,7 @@ void Propietat::actualitzaPropietari()
 
 double Propietat::preuLloguer() const
 {
-	double preu = ceil((0.1*_preu) + (_nombre_cases*_preu_casa)*0.3);
+	double preu = ceil((0.1*_preu) + (_nombre_cases*_preu)*0.3);
 	return preu;
 }
 

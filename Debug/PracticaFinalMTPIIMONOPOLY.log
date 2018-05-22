@@ -1,7 +1,2 @@
-﻿  Joc.cpp
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(31): warning C4018: '>': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(31): warning C4018: '<': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(38): warning C4018: '<': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(125): warning C4018: '<': signed/unsigned mismatch
-c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\joc.cpp(158): warning C4018: '<': signed/unsigned mismatch
-LINK : fatal error LNK1168: cannot open C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe for writing
+﻿  PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe
+  PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.pdb (Partial PDB)

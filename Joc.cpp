@@ -154,10 +154,9 @@ unsigned Joc::tirarDaus(unsigned tirades){
 	unsigned resultat = 0;
 	unsigned res = 0;//guarda resultat
 	unsigned sum = 0;
-	//cout << "Tirades del dau" << endl;
 	for (int i = 0; i < tirades; i++) {
 		rand(res, resultat);
-		//cout << resultat << endl;
+		
 		sum += resultat;
 		_seed = res;
 	}
@@ -193,7 +192,6 @@ void Joc::torn() {
 					cout << "En/La " << aux->jugador.obtenirNomJugador() << " Ha tret un " << posicio << endl;
 					_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
 					_tauler.resetPropietats();
-					//DisplayContent();
 				}
 				else {
 					aux->jugador.mostrar('p');
@@ -202,8 +200,6 @@ void Joc::torn() {
 	}
 		aux = aux->next;
 	}
-			//eliminaJugador();
-	//DisplayContent();
 }
 
 void Joc::inici() {
@@ -242,7 +238,6 @@ void Joc:: mostraGuanyador()const {
 		}
 		aux = aux->next;
 	}
-	//cout << "Jugador " << guanyador->jugador.obtenirId() << ":";
 	guanyador->jugador.mostrar('l');
 }
 
