@@ -26,7 +26,10 @@ void Propietat::llegir(ifstream& in_file) {
 void Propietat::mostrar() const {
 	if(!_propietari)
 	cout << "Propietat: " << _nom << " : " << _preu <<" \u20AC"<< endl;
-	else cout << "Propietat: " << _nom << " : " << _preu << " \u20AC" <<", Propietari: "<<_propietari->obtenirId()<<endl;
+	else {
+		if(_nombre_cases>0)cout << "Propietat: " << _nom << " : " << _preu << " \u20AC" << ", Propietari: " << _propietari->obtenirId() << ", Nombre de cases: " << _nombre_cases << endl;
+		else cout << "Propietat: " << _nom << " : " << _preu << " \u20AC" << ", Propietari: " << _propietari->obtenirId() << endl;
+	}
 
 }
 void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
@@ -43,7 +46,7 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 	}
 	else if (_propietari->obtenirId()==jugador->obtenirId()) {
 		if (_nombre_cases <=5) {
-		    cout <<"vols afegir una casa a la propietat " << _nom << " per " << _preu_casa << " \u20AC" << "?" << "  (S/N)" << endl;
+		    cout <<"Vols afegir una casa a la propietat " << _nom << " per " << _preu_casa << " \u20AC" << "?" << "  (S/N)" << endl;
 			char opci;
 			cin >> opcio;
 			if(opcio=='S')
@@ -53,7 +56,7 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 			cout << "Teniu un hotel :)" << endl;
 	}
 	else {
-		cout << "En/La " << jugador->obtenirNomJugador() 
+		cout << "En/la " << jugador->obtenirNomJugador() 
 			<< " ha de pagar " << preuLloguer() << " euros a en/la " 
 			<< _propietari->obtenirNomJugador() << endl;
 		   _propietari->Cobrar(preuLloguer(),opcio,jugador);

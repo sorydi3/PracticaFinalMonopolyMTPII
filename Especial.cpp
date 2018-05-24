@@ -30,17 +30,19 @@ void Especial::mostrar() const {
 void Especial::processarJugada(Jugador * jugador, Baralla * baralla) {
 	if (_quantitat_p_c != 0) {
 		if (_quantitat_p_c > 0) {
-			cout << "En/La " << jugador->obtenirNomJugador() << " ha de cobrar " << _quantitat_p_c << " \u20AC" << endl;
+			cout << "En/la " << jugador->obtenirNomJugador() << " ha de cobrar " << _quantitat_p_c << " \u20AC" << endl;
 		    jugador->Cobrar(_quantitat_p_c, 's');
 		}
 		else {
-			cout << "En/La " << jugador->obtenirNomJugador() << " ha de pagar " <<abs(_quantitat_p_c) << " \u20AC" << endl;
+			cout << "En/la " << jugador->obtenirNomJugador() << " ha de pagar " <<abs(_quantitat_p_c) << " \u20AC" << endl;
 			jugador->pagar(_quantitat_p_c);
 		}
 	}
 	else {
-		   cout << "En/La " << jugador->obtenirNomJugador() << " es queda " << _torn << " torns sence tirar" << endl;
-		   jugador->penalitzat(_torn);
+		if (_torn > 0) {
+			cout << "En/la " << jugador->obtenirNomJugador() << " es queda " << _torn << " torns sense tirar" << endl;
+			jugador->penalitzat(_torn);
+		}
 	}
 }
 

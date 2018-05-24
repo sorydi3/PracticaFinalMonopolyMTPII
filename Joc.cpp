@@ -50,14 +50,14 @@ void Joc::inicialitzarTauler() {
 	string nom_fitxer;
 	cin >> nom_fitxer;
 	_tauler.settupTauler(nom_fitxer);
-	_tauler.showTable();
+	//_tauler.showTable();
 }
 void Joc::inicialitzarBaralla() {
 	cout << "Introdueix el nom del fitxer de cartes de sort" << endl;
 	string nom_fitxer;
 	cin >> nom_fitxer;
 	_baralla.AfegirCartes(nom_fitxer);
-	_baralla.DisplayContent();
+	//_baralla.DisplayContent();
 
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -89,6 +89,7 @@ bool Joc::isEmpty()const {
 	return _first;
 }
 void Joc::DisplayContent() {
+	cout << "Llistat de jugadors:" << endl;
 	Node *temp = _first;
 	while (temp) {
 		temp->jugador.mostrar('l');
@@ -189,7 +190,7 @@ void Joc::torn() {
 					int posicio = tirarDaus(2);
 					_posicio = posicio;
 					aux->jugador.atualitzaPosicio(_posicio,size,capitalEntrada);
-					cout << "En/La " << aux->jugador.obtenirNomJugador() << " Ha tret un " << posicio << endl;
+					cout << "En/la " << aux->jugador.obtenirNomJugador() << " ha tret un " << posicio << endl;
 					_tauler.processa(&aux->jugador,&_baralla, aux->jugador.obtenirPosicio());
 					_tauler.resetPropietats();
 				}
@@ -215,10 +216,10 @@ void Joc::inici() {
 		cin >> opcio;
 		if (opcio == 'S') _tauler.showTable();
 
-		cout << "Vols mostrar l'estat dels Jugadors? (S/N)" << endl;
+		cout << "Vols mostrar l'estat dels jugadors? (S/N)" << endl;
 		cin >> opcio;
 		if (opcio == 'S') DisplayContent();
-		cout << "Vols Continuar? (S/N)" << endl;
+		cout << "Vols continuar? (S/N)" << endl;
 		cin >> opcio;
 		if (opcio == 'N') continuar = false;
 	}

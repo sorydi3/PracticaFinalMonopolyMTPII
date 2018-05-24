@@ -21,15 +21,15 @@ void Jugador::mostrar(char opcio) const {
 
 	if (opcio == 'l') {
 		if (_penalitzacio > 0)
-			cout << "Jugador " << _id + 1 << ": " << _nom << ": " << _diner << ": Casella:" << _posicio << ": Penalitzat amb " << _penalitzacio << " torns" << endl;
+			cout << "Jugador " << _id + 1 << ": " << _nom << ": " << _diner << ": casella:" << _posicio << ": Penalitzat amb " << _penalitzacio << " torns" << endl;
 		else
-			cout <<"Jugador "<< _id + 1 <<": "<< _nom << ": " << _diner << ": Casella:" << _posicio << endl;
+			cout <<"Jugador "<< _id + 1 <<": "<< _nom << ": " << _diner << ": casella:" << _posicio << endl;
 	}
 	else if (opcio=='p') {
-		cout << "En/La " << _nom << " estx penalitza" << endl;
+		cout << "En/la " << _nom << " està penalitzat" << endl;
 	}
 	else {
-		cout << "En/La " << _nom << " Ha tret un " <<_posicio<< endl;
+		cout << "En/la " << _nom << " Ha tret un " <<_posicio<< endl;
 	}
 	}
 	else {
@@ -84,6 +84,7 @@ void Jugador::Cobrar(int quantitat,char opcio, Jugador *jugador) {
 		if (jugador->_diner < quantitat) {
 			jugador->_diner = -1;
 			_diner += diners;
+			cout << "En/la " << jugador->obtenirNomJugador() << " ha estat eliminat" << endl;
 		}
 		else{ 
 			jugador->_diner -= quantitat;
@@ -107,6 +108,8 @@ bool Jugador::eliminar() const
 void Jugador::pagar(int quantitat) {
 	
 	_diner -= abs(quantitat);
+	if(_diner<0)
+	cout << "En/la " << _nom << " ha estat eliminat" << endl;
 
 }
 

@@ -1,2 +1,8 @@
-﻿  PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe
+﻿  Propietat.cpp
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\propietat.cpp(62): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\sam\source\repos\practicafinalmtpiimonopoly\practicafinalmtpiimonopoly\propietat.cpp(50): warning C4101: 'opci': unreferenced local variable
+  Jugador.cpp
+  Especial.cpp
+  Generating Code...
+  PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.exe
   PracticaFinalMTPIIMONOPOLY.vcxproj -> C:\Users\sam\source\repos\PracticaFinalMTPIIMONOPOLY\Debug\PracticaFinalMTPIIMONOPOLY.pdb (Partial PDB)

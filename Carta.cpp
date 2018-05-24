@@ -25,7 +25,7 @@ void Carta::mostrar(char opcio)const {
 
 		}
 		else {
-			cout <<"El jugador es queda "<< _penalitzacio <<" torns sense tirar"<< endl;
+			cout <<"El jugador es queda "<< _penalitzacio <<" torns sence tirar"<< endl;
 		}
 	}
 	else {
