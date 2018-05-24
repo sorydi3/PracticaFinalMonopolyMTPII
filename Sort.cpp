@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Sort.h"
 
 Sort::Sort():Casella(""){}
@@ -12,6 +12,7 @@ void Sort::mostrar() const {
    cout << "Casella de Sort " <<_nom<< endl;
 }
 void Sort::processarJugada(Jugador * jugador,Baralla * baralla){
+
 	baralla->procesa(1,jugador);
 }
 int Sort::capitalEntrada()const { return 0; }

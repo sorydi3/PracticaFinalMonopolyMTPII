@@ -16,9 +16,9 @@ public:
 	string obtenirNomJugador()const;
 	void actulitzaPenalitzacioJugador();
 	void atualitzaPosicio(int &posicio,int size,int diners_sortida);
-	void pagar(int quantitat);
+	void pagar(double quantitat);
 	bool esMenor(Jugador *j1)const;
-	void Cobrar(int quantitat,char opcio,Jugador * jugador = NULL);
+	void Cobrar(double quantitat,char opcio,Jugador * jugador = NULL);
 	int obtenirPosicio()const;
 	bool eliminar()const;
 	~Jugador();
@@ -26,7 +26,7 @@ private:
 	unsigned _id;
 	string _nom;
 	int _posicio;
-	int _diner;
+	double _diner;
 	unsigned _penalitzacio;
 };
 

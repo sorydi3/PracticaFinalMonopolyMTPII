@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Casella.h"
 
 Casella::Casella(string nom){

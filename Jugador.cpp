@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Jugador.h"
 #include<cmath>
 
@@ -78,9 +78,9 @@ unsigned Jugador::obtenirId()const {
 	return _id+1;
 }
 
-void Jugador::Cobrar(int quantitat,char opcio, Jugador *jugador) {
+void Jugador::Cobrar(double quantitat,char opcio, Jugador *jugador) {
 	if (opcio != 's') {
-		int diners = jugador->_diner;
+		double diners = jugador->_diner;
 		if (jugador->_diner < quantitat) {
 			jugador->_diner = -1;
 			_diner += diners;
@@ -105,7 +105,7 @@ bool Jugador::eliminar() const
 {
 	return _diner < 0;
 }
-void Jugador::pagar(int quantitat) {
+void Jugador::pagar(double quantitat) {
 	
 	_diner -= abs(quantitat);
 	if(_diner<0)

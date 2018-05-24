@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Propietat.h"
 #include<string>
 Propietat::Propietat():Casella("")
@@ -49,8 +49,11 @@ void Propietat::processarJugada(Jugador *jugador,Baralla *baralla){
 		    cout <<"Vols afegir una casa a la propietat " << _nom << " per " << _preu_casa << " \u20AC" << "?" << "  (S/N)" << endl;
 			char opci;
 			cin >> opcio;
-			if(opcio=='S')
-			_nombre_cases++;
+			if (opcio == 'S') {
+				_nombre_cases++;
+				_propietari->pagar(_preu_casa);
+			}
+			
 		}
 		else
 			cout << "Teniu un hotel :)" << endl;

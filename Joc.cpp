@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include<iostream>
 #include<iomanip>
 #include"Joc.h"
@@ -184,6 +184,7 @@ void Joc::torn() {
 	int size=_tauler.getSize();
 	int capitalEntrada = _tauler.capitalEntrada();
 	int _posicio = 0;
+	bool trobat = false;
 	while (aux) {
 		if (!aux->jugador.eliminar()) {
 				if (!aux->jugador.esPenalitzat()) {
@@ -199,6 +200,7 @@ void Joc::torn() {
 					aux->jugador.actulitzaPenalitzacioJugador();
 				}
 	}
+		if (!mesDeUnJugador())break;
 		aux = aux->next;
 	}
 }
@@ -210,8 +212,9 @@ void Joc::inici() {
 	cin >> opcio;
 	if (opcio == 'S') _tauler.showTable();
 
-	while (continuar && mesDeUnJugador()) {
+	while (continuar && mesDeUnJugador() ) {
 		torn();
+		if (!mesDeUnJugador())break;
 		cout << "Vols mostrar el tauler? (S/N)" << endl;
 		cin >> opcio;
 		if (opcio == 'S') _tauler.showTable();
@@ -222,6 +225,7 @@ void Joc::inici() {
 		cout << "Vols continuar? (S/N)" << endl;
 		cin >> opcio;
 		if (opcio == 'N') continuar = false;
+	
 	}
 	cout << "Guanyador:" << endl;
 	mostraGuanyador();
@@ -288,10 +292,12 @@ bool Joc::mesDeUnJugador()const {
 	bool trobat = false;
 	unsigned countador = 0;
 	while (aux && !trobat) {
-		if (!aux->jugador.eliminar()) {
+
+		if (!aux->jugador.eliminar() ) {
 			countador++;
 		}
 		if (countador > 1)trobat = true;
+		aux = aux->next;
 	}
 	return trobat;
 }

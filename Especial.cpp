@@ -1,4 +1,4 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 #include "Especial.h"
 #include<cmath>
 Especial::Especial():Casella(""){
