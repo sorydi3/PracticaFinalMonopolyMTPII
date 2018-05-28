@@ -13,7 +13,11 @@ public:
 	//pre:cert
 	//post:mostra la carta
 	void mostrar(char opcio)const;
+    //pre:--
+	//post:retorna la quantitat que ha de pagar/cobrar el jugador
 	int obtenir_quantitat() const;
+	//pre:
+	//post:retorna la penalitzacio d'aquesta carta
 	int obtenir_penalitzacio()const;
 private:
 	string _inf;

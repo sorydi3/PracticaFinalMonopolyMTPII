@@ -88,7 +88,7 @@ void Joc::deleteFirst() {
 bool Joc::isEmpty()const {
 	return _first;
 }
-void Joc::DisplayContent() {
+void Joc::DisplayContent()const {
 	cout << "Llistat de jugadors:" << endl;
 	Node *temp = _first;
 	while (temp) {
@@ -121,15 +121,6 @@ Joc& Joc::operator=(const Joc& Joc) {
 
 Jugador Joc::Primer()const {
 	return _first->jugador;
-}
-void Joc::procesa(unsigned num) {
-	for (int i = 0; i < num; i++) {
-		Node *aux = _first;
-		cout << "Jugador " << i + 1 << endl;
-		aux->jugador.mostrar('l');
-		addLast(aux->jugador);
-		deleteFirst();
-	}
 }
 
 void Joc::deleteLast() {
@@ -246,46 +237,6 @@ void Joc:: mostraGuanyador()const {
 	guanyador->jugador.mostrar('l');
 }
 
-void Joc::eliminaJugador()
-{
-	Node *ant = NULL;
-	bool trobat = false;
-	Node *t = _first;
-	while (t && !trobat) {
-		//cout << "dintre del while" << endl;
-		if (!t->jugador.eliminar()) {
-			ant = t;
-			t = t->next;
-			//cout << "incrementent el bucle" << endl;
-		}
-		else {
-			trobat = true;
-		}
-	}
-	
-	 if (trobat && !ant && t) {//add at The end of the list
-		cout << "eliminat primer jugador" << endl;
-		deleteFirst();
-		_countador--;
-	}
-	else if (trobat && t && ant) {
-		cout << "eliminat segon jugador" << endl;
-		deleteBetween(ant,t);
-		_countador--;
-	}
-	else  {
-		if (trobat) {
-		    cout << "eliminat tercer jugador" << endl;
-			deleteLast();
-			_countador--;
-		}
-	}
-}
-
-void Joc::deleteBetween(Node *ant, Node *cur) {
-	ant->next = cur->next;
-	delete cur;
-}
 
 bool Joc::mesDeUnJugador()const {
 	Node *aux = _first;
